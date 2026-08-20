@@ -41,6 +41,12 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
+const pool = require("./db");
+
+pool.connect()
+  .then(() => console.log("✅ Connected to PostgreSQL"))
+  .catch(err => console.error("❌ Database Error:", err));
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
