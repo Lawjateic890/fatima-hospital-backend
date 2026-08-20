@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-const pool = require("./db");
+const pool = require("./config/db");
 
 pool.connect()
   .then(() => console.log("✅ Connected to PostgreSQL"))
